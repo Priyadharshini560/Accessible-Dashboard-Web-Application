@@ -1,0 +1,533 @@
+
+/* =================================
+   1. GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   2. SKIP LINK
+================================= */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: #ffffff;
+    color: #1d4ed8;
+    padding: 12px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+
+/* =================================
+   3. HEADER
+================================= */
+
+.site-header {
+    background: #172554;
+    color: white;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.site-header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.site-header nav a:hover {
+    color: #93c5fd;
+}
+
+
+/* =================================
+   4. MENU BUTTON
+================================= */
+
+.menu-toggle {
+    display: none;
+    padding: 10px 15px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* =================================
+   5. MAIN LAYOUT
+================================= */
+
+.layout {
+    display: flex;
+    min-height: 80vh;
+}
+
+
+/* =================================
+   6. SIDEBAR
+================================= */
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #ffffff;
+
+    padding: 25px 20px;
+
+    border-right: 1px solid #e2e8f0;
+}
+
+.sidebar h2 {
+    font-size: 19px;
+    margin-bottom: 22px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #334155;
+
+    padding: 12px 15px;
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a[aria-current="page"] {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+/* =================================
+   7. MAIN CONTENT
+================================= */
+
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    padding: 35px;
+    min-width: 0;
+}
+
+section {
+    margin-bottom: 45px;
+    scroll-margin-top: 20px;
+}
+
+.eyebrow {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+
+/* =================================
+   8. DASHBOARD CARDS
+================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.metric-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04);
+
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+}
+
+.metric-card h2 {
+    font-size: 17px;
+    color: #475569;
+}
+
+.metric {
+    font-size: 34px;
+    font-weight: bold;
+    color: #2563eb;
+
+    margin: 10px 0;
+}
+
+
+/* =================================
+   9. REPORT TABLE
+================================= */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+
+    background: white;
+    border-radius: 10px;
+
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+caption {
+    text-align: left;
+    padding: 15px;
+    font-weight: bold;
+}
+
+thead {
+    background: #eaf0fb;
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =================================
+   10. BUTTONS
+================================= */
+
+button {
+    font-family: inherit;
+    font-size: 14px;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.primary {
+    background: #2563eb;
+    color: white;
+
+    margin-top: 20px;
+
+    font-weight: bold;
+}
+
+.primary:hover {
+    background: #1d4ed8;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+
+/* =================================
+   11. FEEDBACK FORM
+================================= */
+
+form {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    max-width: 650px;
+
+    border: 1px solid #e2e8f0;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    background: white;
+    color: #1e293b;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #2563eb;
+    outline: 2px solid #bfdbfe;
+}
+
+#form-status {
+    color: #15803d;
+    margin-top: 12px;
+}
+
+
+/* =================================
+   12. REPORT DIALOG
+================================= */
+
+dialog {
+    margin: auto;
+
+    width: min(90%, 450px);
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+    background: rgba(15, 23, 42, 0.65);
+}
+
+.dialog-content h2 {
+    font-size: 23px;
+}
+
+.dialog-content p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+#report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+#report-form .form-row {
+    margin-bottom: 5px;
+}
+
+#report-form button {
+    width: 100%;
+}
+
+
+/* =================================
+   13. FOOTER
+================================= */
+
+.site-footer {
+    background: #172554;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 22px;
+}
+
+
+/* =================================
+   14. KEYBOARD ACCESSIBILITY
+================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+
+/* =================================
+   15. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-header nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .metric-card {
+        padding: 20px;
+    }
+}
+
+
+/* =================================
+   16. REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

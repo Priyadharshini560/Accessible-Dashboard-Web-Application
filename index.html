@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+        content="Accessible enterprise dashboard">
+
+    <title>AccessBoard Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Skip Link -->
+    <a href="#main" class="skip-link">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <a href="#overview" class="brand">
+            AccessBoard
+        </a>
+
+        <button class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="sidebar">
+            Menu
+        </button>
+
+        <nav aria-label="Main navigation">
+            <a href="#overview">Overview</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+
+            <h2>Workspace</h2>
+
+            <nav aria-label="Sidebar navigation">
+
+                <a href="#overview" aria-current="page">
+                    Dashboard
+                </a>
+
+                <a href="#reports">
+                    Reports
+                </a>
+
+                <a href="#contact">
+                    Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main id="main" class="main-content">
+
+            <!-- Dashboard Overview -->
+            <section id="overview">
+
+                <p class="eyebrow">
+                    Workspace / Overview
+                </p>
+
+                <h1 id="page-title">
+                    Enterprise Dashboard
+                </h1>
+
+                <p>
+                    Welcome to AccessBoard.
+                    Manage your reports and dashboard activities.
+                </p>
+
+
+                <!-- Dashboard Cards -->
+                <div class="cards">
+
+                    <article class="metric-card">
+
+                        <h2>Active Users</h2>
+
+                        <p class="metric">1,248</p>
+
+                        <p>Updated today</p>
+
+                    </article>
+
+
+                    <article class="metric-card">
+
+                        <h2>Open Tasks</h2>
+
+                        <p class="metric">36</p>
+
+                        <p>Across all teams</p>
+
+                    </article>
+
+
+                    <article class="metric-card">
+
+                        <h2>Reports</h2>
+
+                        <p class="metric">18</p>
+
+                        <p>Available this month</p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- Reports Section -->
+            <section id="reports">
+
+                <h2 id="reports-heading">
+                    Recent Reports
+                </h2>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <caption>
+                            Recent project reports
+                        </caption>
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">Report</th>
+                                <th scope="col">Owner</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="reports-list">
+
+                            <tr>
+
+                                <th scope="row">
+                                    Accessibility Review
+                                </th>
+
+                                <td>Priya</td>
+
+                                <td>Completed</td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        type="button">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <th scope="row">
+                                    UI Component Audit
+                                </th>
+
+                                <td>Team A</td>
+
+                                <td>In progress</td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        type="button">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <th scope="row">
+                                    Monthly Summary
+                                </th>
+
+                                <td>Team B</td>
+
+                                <td>Ready</td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        type="button">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button
+                    id="open-modal"
+                    class="primary"
+                    type="button">
+
+                    + Create Report
+
+                </button>
+
+            </section>
+
+
+            <!-- Contact Section -->
+            <section id="contact">
+
+                <h2>Contact / Feedback Form</h2>
+
+                <form id="feedback-form">
+
+                    <fieldset>
+
+                        <legend>Your Details</legend>
+
+
+                        <div class="form-row">
+
+                            <label for="full-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                id="full-name"
+                                name="fullName"
+                                type="text"
+                                autocomplete="name"
+                                minlength="2"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                minlength="10"
+                                required>
+                            </textarea>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <button
+                        class="primary"
+                        type="submit">
+
+                        Submit Feedback
+
+                    </button>
+
+
+                    <p
+                        id="form-status"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 AccessBoard.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Create Report Dialog -->
+    <dialog
+        id="report-dialog"
+        aria-labelledby="dialog-title">
+
+        <div class="dialog-content">
+
+            <h2 id="dialog-title">
+                Create New Report
+            </h2>
+
+            <p>
+                Enter the details to create a new report.
+            </p>
+
+
+            <form id="report-form">
+
+                <div class="form-row">
+
+                    <label for="report-name">
+                        Report Name
+                    </label>
+
+                    <input
+                        id="report-name"
+                        type="text"
+                        placeholder="Enter report name"
+                        required>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <label for="report-owner">
+                        Report Owner
+                    </label>
+
+                    <input
+                        id="report-owner"
+                        type="text"
+                        placeholder="Enter owner name"
+                        required>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <label for="report-status">
+                        Report Status
+                    </label>
+
+                    <select id="report-status">
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="In progress">
+                            In progress
+                        </option>
+
+                        <option value="Ready">
+                            Ready
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="primary"
+                    type="submit">
+
+                    Add Report
+
+                </button>
+
+
+                <button
+                    id="close-modal"
+                    type="button">
+
+                    Cancel
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </dialog>
+
+
+</body>
+
+</html>
